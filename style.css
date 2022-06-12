@@ -4,3 +4,17 @@
     --color-set: #0275d8;
     --1: 10px;
 }
+
+body {
+    margin: 0;
+}
+.board {
+    width: 100vw;
+    height: 100vw;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3,auto);
+}

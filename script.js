@@ -19,14 +19,57 @@ const restartingButton = document.getElementById('restartButton')
 const winningMessageTextElement = document.getElementById('winningMessageText')
 let isPlayer_O_Turn = false
 
-startGame ()
-restartingButton.addEventListener('click', startGame)
 
-function startGame()
-isPlayer_O_Turn = false
-cellElements.forEach(cell => {
-    cell.classList.remove(PLAYER_X_CLASS)
-    cell.classList.remove(PLAYER_O_CLASS)
-    cell.removeEventListener('click', handleCellClick)
-    cell.addEventListener('click', handleCellClick, { once: true})
-})
+startGame()
+
+restartButton.addEventListener('click', startGame)
+
+function startGame() {
+	isPlayer_O_Turn = false
+	cellElements.forEach(cell => {
+		cell.classList.remove(PLAYER_X_CLASS)
+		cell.classList.remove(PLAYER_O_CLASS)
+		cell.removeEventListener('click', handleCellClick)
+		cell.addEventListener('click', handleCellClick, { once: true })
+	})
+	setBoardHoverClass()
+	winningMessageElement.classList.remove('show')
+}
+
+function handleCellClick(e) {
+    const cell = e.target 
+    const currentClass = isPlayer_O_Turn ? PLAYER_O_CLASS : PLAYER_X_CLASS
+    placeMark(cell, currrantClass)
+    if (CheckWin(currentClass)) {
+        endGame(false)
+    } else if (isDraw()) {
+        endGame(true)
+    } else if {
+        swapTurns()
+        setBoardHoverClass()
+
+    }
+}
+
+function endGame(draw) {
+    if (draw) {
+        winningMessageTextElement.innerText= "it's a draw!"
+    }   else {
+        winningMessageTextElement;innerText = "Player with $(isPlayer_O_Turn ? "O" : "X'"} wins!'
+    }   winningMessageElement.classList.add('Show')
+    }
+
+    function isDraw() {
+        return[...cellElements].every(cell => {
+            return cell.classList.contains(PLAYER_X_CLASS) || cell.classList.contains(PLAYER_O_CLASS)
+        })
+        }
+
+        function placeMark(cell, currentClass) {
+            cell.classList.add(currentClass)
+
+        }
+    function swapTurns() {
+        isPlayer_O_Turn = !isPlayer_O_Turn
+    }
+

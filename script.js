@@ -44,11 +44,11 @@ function handleCellClick(e) {
         endGame(false)
     } else if (isDraw()) {
         endGame(true)
-    } else if 
-        (swapTurns)
+    } else if ()
+        swapTurns
         setBoardHoverClass()
-
-    }
+        }
+    
 
 
 function endGame(draw) {

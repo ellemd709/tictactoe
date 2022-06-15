@@ -47,7 +47,7 @@ function handleCellClick(e) {
     } else if ()
         swapTurns
         setBoardHoverClass()
-        }
+    }
     
 
 

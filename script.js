@@ -19,7 +19,6 @@ const restartingButton = document.getElementById('restartButton')
 const winningMessageTextElement = document.getElementById('winningMessageText')
 let isPlayer_O_Turn = false
 
-
 startGame()
 
 restartButton.addEventListener('click', startGame)

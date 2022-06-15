@@ -38,15 +38,16 @@ function startGame() {
 function handleCellClick(e) {
     const cell = e.target 
     const currentClass = isPlayer_O_Turn ? PLAYER_O_CLASS : PLAYER_X_CLASS
-    placeMark(cell, currrantClass)
+    placeMark(cell, currentClass)
     if (CheckWin(currentClass)) {
         endGame(false)
     } else if (isDraw()) {
         endGame(true)
-    } else if ()
-        swapTurns
+} else {
+        swapTurns()
         setBoardHoverClass()
     }
+}
     
 
 

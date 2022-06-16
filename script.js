@@ -12,16 +12,16 @@ const WINNING_COMBINATIONS = [
 
 ]
 
-const cellElements = document.querySelectorAll('[data-cell]')
+const cellElements = document.querySelectorAll('cell')
 const boardElement = document.getElementById('board')
 const winningMessageElement = document.getElementById('winningMessage')
-const restartingButton = document.getElementById('restartButton')
+const restartingButton = document.getElementById('restart')
 const winningMessageTextElement = document.getElementById('winningMessageText')
 let isPlayer_O_Turn = false
 
 startGame()
 
-restartButton.addEventListener('click', startGame)
+restartingButton.addEventListener('click', startGame)
 
 function startGame() {
 	isPlayer_O_Turn = false
@@ -36,6 +36,7 @@ function startGame() {
 }
 
 function handleCellClick(e) {
+    console.log("clicked a cell");
     const cell = e.target 
     const currentClass = isPlayer_O_Turn ? PLAYER_O_CLASS : PLAYER_X_CLASS
     placeMark(cell, currentClass)
@@ -55,7 +56,7 @@ function endGame(draw) {
     if (draw) {
         winningMessageTextElement.innerText= "it's a draw!"
     }   else {
-        winningMessageTextElement.innerText = 'Player with ${isPlayer_O_Turn ? "O's" : "X's"} wins!'
+        winningMessageTextElement.innerText = 'Player with ${isPlayer_O_Turn ? "O\'s" : "X\'s"} wins!'
     }   winningMessageElement.classList.add('Show')
     }
 

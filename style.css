@@ -20,14 +20,14 @@ body {
 }
 
 .cell {
-    width: var (--cell-size);
-    height: var (--cell-size);
+    width: var(--cell-size);
+    height: var(--cell-size);
     border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    cursor: pointer; 
+    cursor: pointer;
 
 }
 
@@ -108,7 +108,7 @@ body {
 
 .winning-message button:hover {
     background-color: var(--color-set);
-    color: rgba(42, 169, 227, 0.867);
+    color: antiquewhite;
     border-color: antiquewhite;
 
 }
